@@ -1,0 +1,19 @@
+{
+    "manifest version": 2,
+    "name": "giveMeAttention",
+    "description": "Notify another user that you want their attention",
+    "version": "1.0",
+    "icons": {
+        "16": " ",
+        "48": " ",
+        "128": " "
+    },
+    "page_action": {
+        "default icon": {
+            "16": " ",
+            "48": " ",
+            "128": " "
+        }
+    },
+    "content_scripts": [{}]
+}
