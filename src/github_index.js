@@ -54,13 +54,13 @@ function calcSpeed(prev, next) {
 function sendEmail() {
     Email.send({
         Host: "smtp.elasticemail.com",
-        Username: "setin2203@gmail.com",
-        Password: "ACCB6F4AF07EB26DD619FD0E460937D9C7AE",
+        Username: "username",
+        Password: "password",
         Port: 2525,
-        To: "stefancernat88@yahoo.com",
-        From: "setin2203@gmail.com",
-        Subject: "Preparations for meeting",
-        Body: "Have you finished your preparations?"
+        To: "reciever",
+        From: "username",
+        Subject: "subject",
+        Body: "body"
     }).then(
         message => {
             if (message === "OK"){
