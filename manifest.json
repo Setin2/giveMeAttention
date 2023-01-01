@@ -1,19 +1,27 @@
 {
-    "manifest version": 2,
+    "manifest_version": 2,
     "name": "giveMeAttention",
     "description": "Notify another user that you want their attention",
     "version": "1.0",
+    "permissions": [
+        "activeTab",
+        "scripting"
+     ],
     "icons": {
-        "16": " ",
-        "48": " ",
-        "128": " "
+        "16": "/images/icon16.jpg",
+        "48": "/images/icon48.jpg",
+        "128": "/images/icon128.jpg"
     },
+    
     "page_action": {
         "default icon": {
-            "16": " ",
-            "48": " ",
-            "128": " "
+            "16": "/images/icon16.jpg",
+            "48": "/images/icon48.jpg",
+            "128": "/images/icon128.jpg"
         }
     },
-    "content_scripts": [{}]
+    "content_scripts": [{
+        "matches": ["https://www.google.com/*"],
+        "js": ["/src/index.js"]
+    }]
 }
