@@ -1,14 +1,16 @@
-/*document.getElementById("save").addEventListener("click", saveSettings);*/
-
+/*
+ * Save the new email subject and body in the global chrome storage
+ */
 function saveSettings(){
     var subject = document.getElementById("subject").value;
     var body = document.getElementById("body").value;
 
-    chrome.storage.sync.set({ "iwantattention": subject + ";" + body }, function(){
-        //alert("settings saved");
-    });
+    chrome.storage.sync.set({ "iwantattention": subject + ";" + body });
 }
 
+/*
+ * Animate the save button in the popup window on click
+ */
 $('input[role=submit]').click(function () {
     var $t = $('input[role=submit]');
     var hasClass = $t.hasClass('done');
@@ -26,8 +28,8 @@ $('input[role=submit]').click(function () {
     }
 
     saveSettings();
-  });
-  
-  function time() {
+});
+
+function time() {
     return 1000 + Math.random() * 2000
-  }
+}

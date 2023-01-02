@@ -13,9 +13,6 @@
         "default_title": "Give Me Attention",
         "default_popup": "/src/popup/popup.html"
     },
-    "background": {
-        "service_worker": "/src/popup/background.js"
-    },
     "web_accessible_resources": [{
         "resources": ["/images/heart.png"],
         "matches": ["https://www.google.com/*"]
@@ -27,7 +24,7 @@
     },
     "content_scripts": [{
         "matches": ["https://www.google.com/*"],
-        "js": ["/src/smtp.js", "/src/jQuery.js", "/src/index.js"],
+        "js": ["/src/smtp.js", "/src/jQuery.js", "/src/index.js", "/src/animateFloatingButton.js"],
         "css": ["/src/style.css"]
     }]
 }

@@ -83,3 +83,10 @@
     border-bottom-right-radius: 4px;
     font-size: 13px;
 }
+.heartBeat {
+	animation: beat .10s 4 alternate;
+	transform-origin: center;
+}
+@keyframes beat{
+	to { transform: scale(1.4); }
+}
