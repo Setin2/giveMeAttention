@@ -1,0 +1,73 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
+body {
+    text-align: center;
+    font-family: "Roboto", sans-serif;
+    background-color: none !important;
+}
+.wrapper {
+    width: 15rem;
+    padding: 2.1rem 2rem;
+    border-radius: 0.7rem;
+    display: flex;
+    flex-direction: column;
+    background: #fff;
+    justify-items: center;
+    align-items: center;
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+}
+.wrapper .heading h1 {
+    font-weight: 700;
+    font-size: 2rem;
+}
+.form-group {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+}
+.form-group p {
+    text-align: center;
+    font-size: 0.9rem;
+    opacity: 0.9;
+    color: #212121;
+    margin-bottom: 0.3rem;
+}
+.form-group > input {
+    text-align: center;
+    padding: 0.7rem 0.1rem;
+    margin-bottom: 0.9rem;
+    border: none;
+    width: 100%;
+}
+.form-group > input:focus {
+    text-align: center;
+    background: #eee;
+}
+.form-group > ::placeholder {
+    background: #eeeeee;
+    padding: 0.7rem 0.2rem;
+    text-transform: capitalize;
+}
+.btn {
+    font-size: 0.9rem;
+    text-decoration: none;
+}
+.btn-primary {
+    background: #ff4b2b;
+    padding: 0.6rem 2.4rem;
+    text-transform: uppercase;
+    color: #fff;
+    border-radius: 2rem;
+    font-weight: 700;
+    border: 1px solid #ff4b2b;
+    transition: all 200ms linear;
+}
+.btn-primary:hover {
+    background: #fff;
+    color: #ff4b2b;
+    border: 1px solid #ff4b2b;
+}
+.pad {
+    margin: 75px;
+}

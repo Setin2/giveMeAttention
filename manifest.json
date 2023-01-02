@@ -5,8 +5,17 @@
     "version": "1.0",
     "permissions": [
         "activeTab",
-        "scripting"
+        "scripting",
+        "storage"
     ],
+    "action": {
+        "default_icon": "./images/heart.png",
+        "default_title": "Give Me Attention",
+        "default_popup": "/src/popup/popup.html"
+    },
+    "background": {
+        "service_worker": "/src/popup/background.js"
+    },
     "web_accessible_resources": [{
         "resources": ["/images/heart.png"],
         "matches": ["https://www.google.com/*"]
@@ -15,14 +24,6 @@
         "16": "./images/heart.png",
         "48": "./images/heart.png",
         "128": "./images/heart.png"
-    },
-    
-    "page_action": {
-        "default icon": {
-            "16": "./images/heart.png",
-            "48": "./images/heart.png",
-            "128": "./images/heart.png"
-        }
     },
     "content_scripts": [{
         "matches": ["https://www.google.com/*"],

@@ -1,5 +1,6 @@
 var popout = document.createElement("div");
 popout.setAttribute("class", "popout");
+popout.setAttribute("id", "pop");
 document.body.appendChild(popout);
 
 var btn = document.createElement("div");
@@ -12,7 +13,7 @@ heart.setAttribute("width", "60");
 btn.appendChild(heart);
 
 btn.addEventListener('click', function() {
-    sendEmail();
+    sendEmail(false);
 });
 
 $(document).ready(function(){
@@ -51,21 +52,44 @@ function calcSpeed(prev, next) {
     return speed;
 }
 
-function sendEmail() {
-    Email.send({
-        Host: "smtp.elasticemail.com",
-        Username: "username",
-        Password: "password",
-        Port: 2525,
-        To: "reciever",
-        From: "username",
-        Subject: "subject",
-        Body: "body"
-    }).then(
-        message => {
-            if (message === "OK"){
-                alert("Email sent successfully :)");
-            } else alert(message)
-        }
-    );
+async function get_user(){
+    return new Promise(async function (res, rej) {
+      chrome.storage.local.get(['userLocal'], async function (result) {
+          var userLocal = result.userLocal;
+          res(userLocal);
+      });
+    });
 }
+
+function saveDefaultSettings(){
+    chrome.storage.sync.set({"iwantattention": "I want attention!;I want attention :)"});
+}
+
+async function sendEmail(sendEmail) {
+    chrome.storage.sync.get(["iwantattention"], function (items){
+        var settings = items.iwantattention.split(";");
+        console.log(settings[0]);
+        console.log(settings[1]);
+    })
+
+    if (sendEmail){
+        Email.send({
+            Host: "smtp.elasticemail.com",
+            Username: "elatic_username",
+            Password: "elastic_password",
+            Port: 2525,
+            To: "reciever",
+            From: "elatic_username",
+            Subject: settings[0],
+            Body: settings[1]
+        }).then(
+            message => {
+                if (message === "OK"){
+                    alert("Email sent successfully :)");
+                } else alert(message)
+            }
+        );   
+    }
+}
+
+saveDefaultSettings();
