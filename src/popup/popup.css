@@ -2,7 +2,6 @@
 body {
     text-align: center;
     font-family: "Roboto", sans-serif;
-    background-color: none !important;
 }
 .wrapper {
     width: 15rem;
@@ -49,25 +48,87 @@ body {
     padding: 0.7rem 0.2rem;
     text-transform: capitalize;
 }
-.btn {
-    font-size: 0.9rem;
-    text-decoration: none;
+.pad1 {
+    margin: 60px;
 }
-.btn-primary {
-    background: #ff4b2b;
-    padding: 0.6rem 2.4rem;
-    text-transform: uppercase;
-    color: #fff;
-    border-radius: 2rem;
-    font-weight: 700;
-    border: 1px solid #ff4b2b;
-    transition: all 200ms linear;
+.pad2 {
+    margin: 10px
 }
-.btn-primary:hover {
-    background: #fff;
+input[role=submit] {
+    border: 2px solid #ff4b2b;
+    background-color: transparent;
+    height: 60px;
+    line-height: 20px;
     color: #ff4b2b;
-    border: 1px solid #ff4b2b;
+    padding: 0;
+    width: 200px;
+    text-align: center;
+    border-radius: 200px;
+    font-size: 20px;
+    transition: all 200ms ease-in-out;
 }
-.pad {
-    margin: 75px;
+input[role=submit]:focus {
+    outline: 0;
+}
+input[role=submit]:hover {
+    background-color: #ff4b2b;
+    color: #fff;
+    outline: 0;
+}
+input[role=submit]:active {
+    font-size: 24px;
+    outline: 0;
+}
+input[role=submit].clicked {
+    color: transparent;
+    background-color: transparent;
+    width: 60px;
+    border-width: 5px;
+    border-color: #ddd;
+    -webkit-animation: turn 5s linear;
+            animation: turn 5s linear;
+    border-top-color: #ff4b2b;
+}
+input[role=submit].done, input[role=submit].done:hover {
+    background-color: #ff4b2b;
+    color: #fff;
+    position: relative;
+}
+
+@-webkit-keyframes turn {
+    10% {
+        transform: rotateZ(0deg);
+    }
+    55% {
+        transform: rotatez(360deg);
+    }
+    99% {
+        transform: rotateZ(720deg);
+        background-color: transparent;
+        border-color: #ddd;
+        border-top-color: #ff4b2b;
+    }
+    100% {
+        border-color: #ff4b2b;
+        background-color: #ff4b2b;
+    }
+}
+
+@keyframes turn {
+    10% {
+        transform: rotateZ(0deg);
+    }
+    55% {
+        transform: rotatez(360deg);
+    }
+    99% {
+        transform: rotateZ(720deg);
+        background-color: transparent;
+        border-color: #ddd;
+        border-top-color: #ff4b2b;
+    }
+    100% {
+        border-color: #ff4b2b;
+        background-color: #ff4b2b;
+    }
 }
