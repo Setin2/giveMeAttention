@@ -2,6 +2,9 @@
 
 I want attention is a chrome extension that allows the user to quickly send an email to a desired mail address.
 
+### NB !!!
+The extension does not allow the user to specify the recieving email address. This is done programmatically and requires setting up an elasticemail account.
+
 ## Functionality
 
 The extension simply adds a button, which floats randomly thorughout the browser window, and once clicked, it sends an email to the address specified inside the source code.
